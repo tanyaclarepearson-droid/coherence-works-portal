@@ -1,0 +1,293 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Classroom Snapshots | Coherence Works</title><style>
+:root{--navy:#071a54;--blue:#1658ff;--purple:#6628e8;--teal:#0793a5;--green:#24824a;--orange:#ff7a1a;--pink:#e53e83;--line:#dfe7f5;--shadow:0 14px 34px rgba(16,32,74,.08)}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:linear-gradient(180deg,#f7fbff,#fff 48%,#f3f8ff);color:#10204a}
+.page{max-width:1280px;margin:0 auto;background:#fff;min-height:100vh;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 34px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.94);position:sticky;top:0;z-index:10;backdrop-filter:blur(10px)}
+.brand{display:flex;align-items:center;gap:14px;font-weight:900;color:var(--navy);text-decoration:none}
+.ripple{width:44px;height:44px;border-radius:50%;border:3px solid var(--blue);position:relative}.ripple:before,.ripple:after{content:"";position:absolute;border-radius:50%;border:2px solid var(--green);inset:8px}.ripple:after{inset:17px;border-color:var(--purple)}
+nav{display:flex;gap:16px;font-size:13px;font-weight:850;color:var(--navy);flex-wrap:wrap}nav a{text-decoration:none;color:var(--navy);padding:8px 10px;border-radius:999px}nav a:hover{background:#eef4ff}
+.hero{padding:46px 36px 22px;display:grid;grid-template-columns:1fr .9fr;gap:28px;align-items:center}
+h1{font-family:Georgia,serif;font-size:64px;line-height:.94;margin:0;color:var(--navy);letter-spacing:-.05em}
+.sub{font-size:22px;font-weight:850;color:#2a38bd;margin:22px 0 16px;line-height:1.3}.lead{font-size:18px;line-height:1.55;font-weight:650;color:#31446d}
+.card{border:1px solid var(--line);border-radius:28px;padding:28px;background:linear-gradient(135deg,#eef4ff,#fff);box-shadow:var(--shadow)}
+.section{padding:16px 36px 34px}.section-title{text-align:center;font-size:28px;font-weight:950;color:var(--navy);margin:20px 0 8px}.section-sub{text-align:center;font-size:14px;font-weight:750;color:#47608f;margin-bottom:24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:14px;background:#fff;color:var(--navy);font-weight:950;border:1px solid #cbd9ef;text-decoration:none;margin:6px 8px 0 0}.btn.primary{background:linear-gradient(135deg,var(--purple),var(--blue));color:#fff;border:none}.btn.orange{background:var(--orange);color:#fff;border:none}.btn.teal{background:var(--teal);color:#fff;border:none}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid.two{grid-template-columns:repeat(2,1fr)}.grid.four{grid-template-columns:repeat(4,1fr)}
+.tile{border:1px solid var(--line);border-radius:22px;padding:22px;background:#fff;box-shadow:var(--shadow)}.tile h3{margin:0 0 10px;color:var(--navy);font-size:21px}.tile p,.tile li{font-size:15px;line-height:1.45;color:#31446d;font-weight:650}.ico{font-size:40px;margin-bottom:10px}
+.path-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.path-card{border:1px solid var(--line);border-radius:24px;padding:24px;background:white;box-shadow:var(--shadow);cursor:pointer;transition:.2s}.path-card:hover{transform:translateY(-3px)}.path-card.active{border:3px solid var(--accent);transform:translateY(-3px)}.path-card h3{font-size:24px;line-height:1.12;margin:0;color:var(--navy)}.path-card p{font-weight:650;line-height:1.45;color:#31446d}.badge{display:inline-block;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:950;background:color-mix(in srgb,var(--accent) 15%,#fff);color:var(--accent);margin-bottom:12px}
+.teacher{--accent:var(--purple);background:#fbf8ff}.transition{--accent:var(--teal);background:#f3fdff}.agency{--accent:var(--orange);background:#fff9f2}
+.detail{margin-top:24px;border:1px solid var(--line);border-radius:28px;background:#fff;box-shadow:var(--shadow);overflow:hidden}.detail-head{padding:28px;background:linear-gradient(135deg,color-mix(in srgb,var(--active) 14%,#fff),#fff);border-bottom:1px solid var(--line)}.detail-head h2{margin:0;font-size:34px;color:var(--navy);line-height:1.1}.detail-head p{font-size:17px;line-height:1.55;font-weight:700;color:#31446d;max-width:920px}
+.detail-body{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:24px}.panel{border:1px solid var(--line);border-radius:22px;padding:22px;background:#fbfdff}.panel h3{margin:0 0 12px;font-size:20px;color:var(--navy)}.panel ul{margin:0;padding-left:20px}.panel li{margin:9px 0;font-weight:650;line-height:1.4;color:#31446d}
+.next-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:0 24px 24px}.next{border-radius:18px;padding:18px;background:color-mix(in srgb,var(--active) 10%,#fff);border:1px solid color-mix(in srgb,var(--active) 22%,#dfe7f5)}.next b{display:block;color:var(--navy);margin-bottom:6px}.next span{font-size:13px;font-weight:650;color:#42577d;line-height:1.35}
+.actions{display:flex;gap:12px;flex-wrap:wrap;padding:0 24px 28px}.actionBtn{padding:13px 18px;border-radius:14px;background:var(--active);color:#fff;font-weight:950;border:none;text-decoration:none}.actionBtn.secondary{background:white;color:var(--navy);border:1px solid #cbd9ef}
+.callout{background:linear-gradient(135deg,#f3eaff,#eefaff);border-radius:22px;padding:24px;font-weight:850;color:var(--navy);line-height:1.5}.practice{border-left:6px solid var(--blue);background:#f7fbff}.reflection-box{border:1px dashed #9db5df;border-radius:18px;padding:18px;margin:12px 0;background:#fbfdff}
+footer{margin-top:30px;background:#06194d;color:white;padding:24px 36px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:900px){.hero,.grid,.grid.two,.grid.four,.path-grid,.detail-body,.next-row{grid-template-columns:1fr}h1{font-size:46px}nav{display:none}}
+
+
+.vignette-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.vignette{border:1px solid var(--line);border-radius:26px;background:#fff;box-shadow:var(--shadow);overflow:hidden}
+.vignette-art{min-height:255px;padding:26px;border-bottom:1px solid var(--line);display:flex;align-items:flex-end;position:relative;overflow:hidden;background-size:cover;background-position:center}
+.vignette-art:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,26,84,.02),rgba(7,26,84,.58)),radial-gradient(circle at 20% 20%,rgba(255,255,255,.20),transparent 32%)}
+.vignette-art:after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.04);backdrop-filter:blur(.2px)}
+.vignette-art h3{position:relative;z-index:2;color:#fff;font-family:Georgia,serif;font-size:33px;line-height:1.05;margin:0;max-width:86%;text-shadow:0 4px 16px rgba(0,0,0,.45)}
+.vignette-art .note{position:absolute;top:20px;left:20px;z-index:3;background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.55);border-radius:999px;padding:8px 13px;color:#071a54;font-size:12px;font-weight:950;box-shadow:0 8px 20px rgba(7,26,84,.14)}
+.vignette-body{padding:22px}
+.vignette-row{display:grid;grid-template-columns:92px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid #edf2fb}
+.vignette-row:last-child{border-bottom:none}
+.vignette-label{font-weight:950;color:var(--navy)}
+.vignette-text{font-weight:650;line-height:1.45;color:#31446d}
+.scene-transition{background-image:url('images/snapshot-transition.jpg')}
+.scene-choice{background-image:url('images/snapshot-thinking.jpg')}
+.scene-opening{background-image:url('images/snapshot-belonging.jpg')}
+.scene-language{background-image:url('images/snapshot-language.jpg')}
+.scene-room{background-image:url('images/snapshot-regulate.jpg')}
+.scene-goals{background-image:url('images/snapshot-goals.jpg')}
+@media(max-width:900px){.vignette-grid{grid-template-columns:1fr}.vignette-art h3{font-size:28px}}
+
+.lens-box{
+  margin-top:18px;
+  border-top:1px solid #edf2fb;
+  padding-top:16px;
+}
+.lens-title{
+  font-weight:950;
+  color:#071a54;
+  margin-bottom:10px;
+  font-size:14px;
+}
+.lens-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+}
+.lens{
+  border:1px solid #dfe7f5;
+  border-radius:14px;
+  padding:10px;
+  background:linear-gradient(180deg,#ffffff,#f8fbff);
+}
+.lens b{
+  display:block;
+  color:#071a54;
+  font-size:12px;
+  margin-bottom:5px;
+}
+.lens span{
+  display:block;
+  color:#31446d;
+  font-size:11.5px;
+  font-weight:650;
+  line-height:1.35;
+}
+.guided-tour{
+  border:1px solid #dfe7f5;
+  border-radius:28px;
+  padding:26px;
+  background:linear-gradient(135deg,#f3eaff,#eefaff);
+  box-shadow:var(--shadow);
+  margin-top:26px;
+}
+.tour-steps{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:12px;
+  margin-top:18px;
+}
+.tour-step{
+  background:white;
+  border:1px solid #dfe7f5;
+  border-radius:18px;
+  padding:16px;
+}
+.tour-step b{
+  display:block;
+  color:#071a54;
+  margin-bottom:6px;
+}
+.tour-step span{
+  font-size:13px;
+  font-weight:650;
+  line-height:1.35;
+  color:#31446d;
+}
+@media(max-width:900px){.lens-grid,.tour-steps{grid-template-columns:1fr}}
+</style></head><body><div class="page"><header><a class="brand" href="index.html"><div class="ripple"></div><div>COHERENCE WORKS<br><span style="font-size:12px;font-weight:700;color:#4d6a98">Teacher Pathway</span></div></a><nav><a href="index.html">Home</a><a href="what-if.html">What If</a><a href="teacher-mode.html">Teacher Mode</a><a href="3f.html">3F</a><a href="crea.html">CREA</a><a href="classroom-examples.html">Examples</a><a href="snapshots.html">Snapshots</a><a href="example-calmer-transitions.html">Transitions Journey</a><a href="example-student-agency.html">Agency Journey</a><a href="reflection-tool.html">Reflection Tool</a></nav></header>
+<section class="hero">
+  <div>
+    <h1>Classroom Snapshots</h1>
+    <div class="sub">Small coherent moments becoming visible.</div>
+    <p class="lead">These snapshot cards show how tiny shifts can travel through the Coherence Works ecosystem: conditions, 3F, CREA, and DPZ.</p>
+    <a class="btn primary" href="what-if.html">Choose a What If Path →</a>
+    <a class="btn" href="reflection-tool.html">Open Reflection Tool</a>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0">How to read a snapshot</h2>
+    <p class="lead">Each snapshot includes a context, one small shift, observed change, and framework connection.</p>
+    <p class="lead">These are stand-in examples for now — enough to make the ecosystem feel lived and navigable.</p>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="section-title">Snapshot Gallery</div>
+  <div class="section-sub">Each vignette offers a glimpse into a lived classroom moment: What if → Because → Then → Try → Notice.</div>
+
+  <div class="vignette-grid">
+
+    <article class="vignette">
+      <div class="vignette-art scene-transition"><div class="note">Real moments · small shifts</div><h3>What if transitions felt calmer?</h3>
+      </div>
+      <div class="vignette-body">
+        <div class="vignette-row"><div class="vignette-label">Because</div><div class="vignette-text">Predictable rhythms help students return to learning with less friction and more safety.</div></div>
+        <div class="vignette-row"><div class="vignette-label">Then</div><div class="vignette-text">Attention could recover faster, prompting could decrease, and students could begin preparing before the cue ends.</div></div>
+        <div class="vignette-row"><div class="vignette-label">Try</div><div class="vignette-text">Use one familiar audio cue, one breath, and one consistent next-step phrase.</div></div>
+        <div class="vignette-row"><div class="vignette-label">Notice</div><div class="vignette-text">What changed in the room after the cue?</div></div>
+
+        <div class="lens-box">
+          <div class="lens-title">See this through another lens</div>
+          <div class="lens-grid">
+            <div class="lens"><b>Teacher Mode</b><span>Notice emotional tone during re-entry.</span></div>
+            <div class="lens"><b>3F</b><span>Frequency + fidelity stabilize the routine.</span></div>
+            <div class="lens"><b>CREA</b><span>Predictable cues create resonance.</span></div>
+            <div class="lens"><b>DPZ</b><span>Repeated regulation becomes more self-sustaining.</span></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="vignette">
+      <div class="vignette-art scene-choice"><div class="note">Choice within structure</div><h3>What if students had more ways to show thinking?</h3>
+      </div>
+      <div class="vignette-body">
+        <div class="vignette-row"><div class="vignette-label">Because</div><div class="vignette-text">Meaningful choice can reduce pressure while keeping the learning purpose stable.</div></div>
+        <div class="vignette-row"><div class="vignette-label">Then</div><div class="vignette-text">More students may participate, academic language may grow, and confidence may become more visible.</div></div>
+        <div class="vignette-row"><div class="vignette-label">Try</div><div class="vignette-text">Offer response format choices: draw, write, speak, gesture, record, or build.</div></div>
+        <div class="vignette-row"><div class="vignette-label">Notice</div><div class="vignette-text">Which pathway helped students express what they knew?</div></div>
+
+        <div class="lens-box">
+          <div class="lens-title">See this through another lens</div>
+          <div class="lens-grid">
+            <div class="lens"><b>Teacher Mode</b><span>Tune participation pathways.</span></div>
+            <div class="lens"><b>3F</b><span>Form clarifies how thinking can be shown.</span></div>
+            <div class="lens"><b>CREA</b><span>Choice supports resonance and agency.</span></div>
+            <div class="lens"><b>DPZ</b><span>Stable choice structures protect growth.</span></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="vignette">
+      <div class="vignette-art scene-opening"><div class="note">Belonging before performance</div><h3>What if the day began with belonging?</h3>
+      </div>
+      <div class="vignette-body">
+        <div class="vignette-row"><div class="vignette-label">Because</div><div class="vignette-text">Opening rituals create emotional predictability and help students orient to the learning community.</div></div>
+        <div class="vignette-row"><div class="vignette-label">Then</div><div class="vignette-text">Students may settle faster, feel more connected, and enter tasks with more readiness.</div></div>
+        <div class="vignette-row"><div class="vignette-label">Try</div><div class="vignette-text">Use a greeting, breath, preview, and one connecting question.</div></div>
+        <div class="vignette-row"><div class="vignette-label">Notice</div><div class="vignette-text">What changed when students knew how the day would begin?</div></div>
+
+        <div class="lens-box">
+          <div class="lens-title">See this through another lens</div>
+          <div class="lens-grid">
+            <div class="lens"><b>Teacher Mode</b><span>Begin with connection and clarity.</span></div>
+            <div class="lens"><b>3F</b><span>Opening routines gain power through repetition.</span></div>
+            <div class="lens"><b>CREA</b><span>Belonging creates resonance.</span></div>
+            <div class="lens"><b>DPZ</b><span>Rituals make readiness more durable.</span></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="vignette">
+      <div class="vignette-art scene-language"><div class="note">Language lowers the lift</div><h3>What if language support made thinking easier?</h3>
+      </div>
+      <div class="vignette-body">
+        <div class="vignette-row"><div class="vignette-label">Because</div><div class="vignette-text">Sentence frames reduce cognitive load and give students a structure for participation.</div></div>
+        <div class="vignette-row"><div class="vignette-label">Then</div><div class="vignette-text">Partner talk may become more focused, students may borrow useful language, and explanations may deepen.</div></div>
+        <div class="vignette-row"><div class="vignette-label">Try</div><div class="vignette-text">Model two sentence frames, then let students practice with a partner and revise aloud.</div></div>
+        <div class="vignette-row"><div class="vignette-label">Notice</div><div class="vignette-text">Which words or structures did students begin using independently?</div></div>
+
+        <div class="lens-box">
+          <div class="lens-title">See this through another lens</div>
+          <div class="lens-grid">
+            <div class="lens"><b>Teacher Mode</b><span>Notice who has language to enter.</span></div>
+            <div class="lens"><b>3F</b><span>Clear form reduces cognitive load.</span></div>
+            <div class="lens"><b>CREA</b><span>Shared language increases resonance.</span></div>
+            <div class="lens"><b>DPZ</b><span>Language routines stabilize participation.</span></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="vignette">
+      <div class="vignette-art scene-room"><div class="note">The room becomes a support</div><h3>What if the room helped students regulate?</h3>
+      </div>
+      <div class="vignette-body">
+        <div class="vignette-row"><div class="vignette-label">Because</div><div class="vignette-text">Environmental cues shape attention, emotional tone, and readiness for independent work.</div></div>
+        <div class="vignette-row"><div class="vignette-label">Then</div><div class="vignette-text">Students may begin more independently, need fewer reminders, and sustain effort longer.</div></div>
+        <div class="vignette-row"><div class="vignette-label">Try</div><div class="vignette-text">Use softer lighting, a visual timer, a calm image, and a clear work pathway.</div></div>
+        <div class="vignette-row"><div class="vignette-label">Notice</div><div class="vignette-text">What environmental cue seemed to support focus most?</div></div>
+
+        <div class="lens-box">
+          <div class="lens-title">See this through another lens</div>
+          <div class="lens-grid">
+            <div class="lens"><b>Teacher Mode</b><span>Tune the environment before redirecting.</span></div>
+            <div class="lens"><b>3F</b><span>Fidelity keeps supports reliable.</span></div>
+            <div class="lens"><b>CREA</b><span>Calm conditions support engagement.</span></div>
+            <div class="lens"><b>DPZ</b><span>Safe challenge becomes easier to sustain.</span></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="vignette">
+      <div class="vignette-art scene-goals"><div class="note">Reflection creates direction</div><h3>What if goals grew from reflection?</h3>
+      </div>
+      <div class="vignette-body">
+        <div class="vignette-row"><div class="vignette-label">Because</div><div class="vignette-text">Reflection helps students recognize growth and connect effort to purpose.</div></div>
+        <div class="vignette-row"><div class="vignette-label">Then</div><div class="vignette-text">Students may name progress, choose next steps, and feel more ownership of learning.</div></div>
+        <div class="vignette-row"><div class="vignette-label">Try</div><div class="vignette-text">End with one sentence: “Today I got stronger at…”</div></div>
+        <div class="vignette-row"><div class="vignette-label">Notice</div><div class="vignette-text">Where did students begin to describe their own growth?</div></div>
+
+        <div class="lens-box">
+          <div class="lens-title">See this through another lens</div>
+          <div class="lens-grid">
+            <div class="lens"><b>Teacher Mode</b><span>Invite one moment of self-recognition.</span></div>
+            <div class="lens"><b>3F</b><span>Frequent reflection strengthens coherence.</span></div>
+            <div class="lens"><b>CREA</b><span>Reflection supports emergence and agency.</span></div>
+            <div class="lens"><b>DPZ</b><span>Growth becomes more durable when named.</span></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="guided-tour">
+    <div class="section-title" style="margin-top:0">One-Minute Guided Tour</div>
+    <div class="section-sub">New here? Start with one classroom moment and let it deepen across the ecosystem.</div>
+    <div class="tour-steps">
+      <div class="tour-step"><b>1. Choose a snapshot</b><span>Start with a moment that feels familiar.</span></div>
+      <div class="tour-step"><b>2. Read the What If</b><span>Let the question open curiosity.</span></div>
+      <div class="tour-step"><b>3. See the lenses</b><span>Notice how Teacher Mode, 3F, CREA, and DPZ connect.</span></div>
+      <div class="tour-step"><b>4. Try one move</b><span>Use one small shift tomorrow.</span></div>
+      <div class="tour-step"><b>5. Reflect</b><span>Name what changed and what to sustain.</span></div>
+    </div>
+    <div style="text-align:center;margin-top:22px">
+      <a class="btn primary" href="reflection-tool.html">Open Reflection Tool →</a>
+      <a class="btn" href="what-if.html">Choose a What If Path</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="callout">
+    Snapshots are not proof claims. They are noticing tools — small windows into how coherent conditions begin to change what becomes possible in lived moments.
+  </div>
+</section>
+<footer><div><b>COHERENCE WORKS</b><br><span style="opacity:.82">Recognition is stronger than persuasion.</span></div><div>What if coherence became easier to notice, strengthen, and sustain?</div></footer></div></body></html>
